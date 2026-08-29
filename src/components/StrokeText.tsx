@@ -17,6 +17,8 @@ interface StrokeTextProps {
   fontWeight?: number | string;
   letterSpacing?: number;
   reverse?: boolean;
+  repeat?: boolean;
+  repeatDelay?: number;
   className?: string;
 }
 
@@ -54,9 +56,12 @@ export default function StrokeText({
   fontWeight     = 800,
   letterSpacing  = -4,
   reverse        = false,
+  repeat         = false,
+  repeatDelay    = 3,
   className      = "",
 }: StrokeTextProps) {
   const [mounted, setMounted] = useState(false);
+  const [remountKey, setRemountKey] = useState(0);
   const [charData, setCharData] = useState<CharData[]>([]);
   const [viewW, setViewW]   = useState(800);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -99,6 +104,16 @@ export default function StrokeText({
     // animations start via CSS `animation-fill-mode: both` + delay
   }, [trigger, mounted]);
 
+  // ── Repeat logic ───────────────────────────────────────────────────
+  useEffect(() => {
+    if (!repeat || !mounted) return;
+    const totalAnimTime = (fillStart + drawDuration * 0.85 + repeatDelay) * 1000;
+    const interval = setInterval(() => {
+      setRemountKey((prev) => prev + 1);
+    }, totalAnimTime);
+    return () => clearInterval(interval);
+  }, [repeat, mounted, fillStart, drawDuration, repeatDelay]);
+
   // ── Keyframes injected once ────────────────────────────────────────
   const keyframes = `
     @keyframes stk-draw {
@@ -124,6 +139,7 @@ export default function StrokeText({
       role="img"
     >
       <svg
+        key={remountKey}
         width="100%"
         viewBox={`0 0 ${viewW} ${svgHeight}`}
         preserveAspectRatio="xMidYMid meet"

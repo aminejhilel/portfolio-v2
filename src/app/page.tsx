@@ -17,6 +17,7 @@ import {
   ChevronRight,
   Menu,
   X,
+  Phone
 } from "lucide-react";
 
 // Inline LinkedIn SVG (brand icons removed from lucide-react)
@@ -59,6 +60,15 @@ function InstagramIcon({ size = 20, className = "" }: { size?: number; className
     </svg>
   );
 }
+
+function GithubIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </svg>
+  );
+}
+
 import StrokeText from "@/components/StrokeText";
 import GridScan from "@/components/GridScan";
 import { Card, CardContent } from "@/components/ui/card";
@@ -171,12 +181,9 @@ export default function Home() {
       <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
         <div className="flex items-center justify-between bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 shadow-2xl rounded-2xl px-4 py-2 w-full max-w-6xl">
           <a href="#" className="flex items-center gap-3 group">
-            <span className="h-10 w-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
-              MB
-            </span>
             <div className="flex flex-col">
               <span className="font-semibold text-white leading-none tracking-tight">Mohammed BENRABAH</span>
-              <span className="text-xs text-teal-400">Génie Climatique & Éco-Énergétique</span>
+              <span className="text-xs text-[#FF9FFC]">Génie Climatique & Éco-Énergétique</span>
             </div>
           </a>
 
@@ -198,14 +205,13 @@ export default function Home() {
               Compétences
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
             </a>
-            <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group">
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 transition-all group-hover:w-full"></span>
-            </a>
+
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transition-all duration-300 active:scale-95"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 active:scale-95"
+              style={{ background: 'linear-gradient(135deg, #c084fc, #FF9FFC)' }}
             >
+              <Mail size={16} className="mr-2" />
               Me Contacter
             </a>
           </nav>
@@ -252,18 +258,14 @@ export default function Home() {
             >
               Compétences
             </a>
-            <a 
-              href="#contact" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-slate-300 hover:text-teal-400 py-2 transition-colors"
-            >
-              Contact
-            </a>
+
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg"
+              className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-lg shadow-purple-500/20"
+              style={{ background: 'linear-gradient(135deg, #c084fc, #FF9FFC)' }}
             >
+              <Mail size={16} className="mr-2" />
               Me Contacter
             </a>
           </nav>
@@ -332,6 +334,8 @@ export default function Home() {
               fontWeight={800}
               letterSpacing={-4}
               reverse={false}
+              repeat={true}
+              repeatDelay={3}
             />
           </div>
 
@@ -524,7 +528,8 @@ export default function Home() {
 
               {/* CV Download CTA */}
               <a 
-                href="#contact" 
+                href="/CV_Mohammed_BENRABAH.pdf" 
+                download="CV_Mohammed_BENRABAH.pdf"
                 className="group relative mt-2 w-full p-[1px] rounded-2xl overflow-hidden cursor-pointer"
               >
                 {/* Animated gradient border */}
@@ -821,9 +826,6 @@ export default function Home() {
       <footer className="border-t border-slate-900 bg-slate-950 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <span className="h-8 w-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-500 flex items-center justify-center font-bold text-sm text-white shadow-md shadow-teal-500/10">
-              MB
-            </span>
             <span className="text-sm font-medium text-slate-400">
               &copy; {new Date().getFullYear()} Mohammed BENRABAH. Tous droits réservés.
             </span>
@@ -839,6 +841,32 @@ export default function Home() {
               Conçu pour l'Éco-Énergie
               <Zap size={12} className="text-emerald-400" />
             </span>
+          </div>
+        </div>
+        
+        {/* Developer Credit */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-900/50">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-slate-500">
+            <span className="font-semibold text-slate-400">Développé par AMINE JHILEL</span>
+            <span className="hidden md:inline text-slate-800">•</span>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="tel:+212650475939" className="hover:text-[#FF9FFC] transition-colors flex items-center gap-1">
+                <Phone size={12} />
+                +212 650 475 939
+              </a>
+              <a href="https://www.instagram.com/amine.jhilel.7/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors flex items-center gap-1">
+                <InstagramIcon size={12} />
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/amine.jhilel.7/?locale=fr_FR" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors flex items-center gap-1">
+                <FacebookIcon size={12} />
+                Facebook
+              </a>
+              <a href="https://github.com/aminejhilel" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                <GithubIcon size={12} />
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
       </footer>

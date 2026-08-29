@@ -20,7 +20,7 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   overflow-x: hidden;
 }
 
