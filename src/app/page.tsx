@@ -823,50 +823,98 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-900 bg-slate-950 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-slate-400">
-              &copy; {new Date().getFullYear()} Mohammed BENRABAH. Tous droits réservés.
-            </span>
+      <footer className="relative overflow-hidden bg-gradient-to-b from-slate-950 to-[#020408]">
+        {/* Top glow line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-500/60 to-transparent" />
+        {/* Ambient glow blobs */}
+        <div className="absolute -top-24 left-1/4 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 right-1/4 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8 relative z-10">
+
+          {/* Top row: branding + tagline + linkedin */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+            {/* Branding */}
+            <div className="flex flex-col items-center md:items-start gap-2">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-teal-500/30">
+                  <Zap size={16} className="text-white" />
+                </div>
+                <span className="text-lg font-bold text-white tracking-tight">Mohammed BENRABAH</span>
+              </div>
+              <p className="text-xs text-slate-500 flex items-center gap-1.5">
+                Conçu pour l&apos;Éco-Énergie
+                <span className="inline-block w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+              </p>
+            </div>
+
+            {/* LinkedIn pill */}
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 px-4 py-2 rounded-full border border-slate-800 bg-slate-900/60 text-slate-400 text-sm hover:border-teal-500/60 hover:text-teal-400 hover:bg-teal-500/10 transition-all duration-300 shadow-sm"
+            >
+              <LinkedinIcon size={15} />
+              <span>LinkedIn</span>
+              <ChevronRight size={13} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+            </a>
           </div>
 
-          <div className="flex items-center gap-6 text-sm text-slate-500">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors flex items-center gap-1">
-              <LinkedinIcon size={14} />
-              LinkedIn
-            </a>
-            <span className="text-slate-800">|</span>
-            <span className="flex items-center gap-1">
-              Conçu pour l'Éco-Énergie
-              <Zap size={12} className="text-emerald-400" />
+          {/* Gradient divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent mb-8" />
+
+          {/* Developer credit row */}
+          <div className="flex flex-col items-center gap-5">
+            <p className="text-xs text-slate-600 uppercase tracking-widest font-semibold">Développé par</p>
+            <span className="text-base font-bold bg-gradient-to-r from-teal-400 via-emerald-300 to-teal-500 bg-clip-text text-transparent">
+              AMINE JHILEL
             </span>
-          </div>
-        </div>
-        
-        {/* Developer Credit */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-900/50">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-slate-500">
-            <span className="font-semibold text-slate-400">Développé par AMINE JHILEL</span>
-            <span className="hidden md:inline text-slate-800">•</span>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+212650475939" className="hover:text-[#FF9FFC] transition-colors flex items-center gap-1">
-                <Phone size={12} />
+
+            {/* Social links */}
+            <div className="flex flex-wrap justify-center gap-3 mt-1">
+              <a
+                href="tel:+212650475939"
+                className="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800/80 bg-slate-900/50 text-slate-500 text-xs hover:border-fuchsia-500/50 hover:text-[#FF9FFC] hover:bg-fuchsia-500/10 transition-all duration-300"
+              >
+                <Phone size={12} className="group-hover:scale-110 transition-transform" />
                 +212 650 475 939
               </a>
-              <a href="https://www.instagram.com/amine.jhilel.7/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors flex items-center gap-1">
-                <InstagramIcon size={12} />
+              <a
+                href="https://www.instagram.com/amine.jhilel.7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800/80 bg-slate-900/50 text-slate-500 text-xs hover:border-pink-500/50 hover:text-pink-400 hover:bg-pink-500/10 transition-all duration-300"
+              >
+                <InstagramIcon size={12} className="group-hover:scale-110 transition-transform" />
                 Instagram
               </a>
-              <a href="https://www.facebook.com/amine.jhilel.7/?locale=fr_FR" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors flex items-center gap-1">
-                <FacebookIcon size={12} />
+              <a
+                href="https://www.facebook.com/amine.jhilel.7/?locale=fr_FR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800/80 bg-slate-900/50 text-slate-500 text-xs hover:border-blue-500/50 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-300"
+              >
+                <FacebookIcon size={12} className="group-hover:scale-110 transition-transform" />
                 Facebook
               </a>
-              <a href="https://github.com/aminejhilel" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
-                <GithubIcon size={12} />
+              <a
+                href="https://github.com/aminejhilel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800/80 bg-slate-900/50 text-slate-500 text-xs hover:border-slate-400/50 hover:text-white hover:bg-white/5 transition-all duration-300"
+              >
+                <GithubIcon size={12} className="group-hover:scale-110 transition-transform" />
                 GitHub
               </a>
             </div>
+          </div>
+
+          {/* Bottom copyright */}
+          <div className="mt-10 pt-6 border-t border-slate-900/70 flex justify-center">
+            <p className="text-xs text-slate-700">
+              &copy; {new Date().getFullYear()} Mohammed BENRABAH — Tous droits réservés.
+            </p>
           </div>
         </div>
       </footer>
