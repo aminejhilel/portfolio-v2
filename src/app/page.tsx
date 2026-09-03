@@ -71,6 +71,7 @@ function GithubIcon({ size = 20, className = "" }: { size?: number; className?: 
 
 import StrokeText from "@/components/StrokeText";
 import GridScan from "@/components/GridScan";
+import GhostFibers from "@/components/GhostFibers";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
@@ -81,78 +82,107 @@ export default function Home() {
 
   const experiences = [
     {
+      role: "Chargé d'Audit Énergétique (Audit Expert Habitat)",
+      company: "ENSIATE Suresnes / Audit Expert Habitat",
+      type: "Alternance",
+      period: "mai 2026 - Présent",
+      location: "Bois-Colombes, France",
+      description: "Analyse énergétique de bâtiments résidentiels/tertiaires. Collecte et traitement des données techniques : enveloppe, parois, systèmes CVC/ECS. Modélisation thermique, diagnostic des déperditions et consommations. Proposition de scénarios de rénovation énergétique et suivi des rapports.",
+      icon: Zap,
+      skills: ["Audit énergétique", "Modélisation thermique", "CVC/ECS", "Rénovation énergétique"]
+    },
+    {
       role: "Technicien de maintenance CVC",
       company: "CITY CLIM",
       type: "Stage",
-      period: "juin 2025 - août 2025 · 3 mois",
-      location: "Ville de Paris, Île-de-France, France · Sur site",
-      description: "Installation et maintenance préventive et curative des systèmes de chauffage, ventilation et climatisation (CVC). Diagnostic des pannes, réglage des régulations thermiques et optimisation des flux d'air.",
+      period: "juin 2025 - août 2025",
+      location: "France",
+      description: "Installation, diagnostic et dépannage de systèmes CVC. Diagnostic des pannes, réparation et remplacement des composants défectueux. Vérification du bon fonctionnement des équipements de régulation et de sécurité. Lecture et interprétation de plans techniques, schémas électriques et hydrauliques...",
       icon: Thermometer,
-      skills: ["Chauffage", "Ventilation", "Climatisation", "Régulation thermique", "Dépannage CVC"]
+      skills: ["Chauffage", "Ventilation", "Climatisation", "Régulation", "Plans techniques"]
     },
     {
       role: "Technicien de maintenance",
-      company: "Merca Bestagri",
+      company: "MERCA BEST AGRI SARL",
       type: "Stage",
-      period: "oct. 2023 - avr. 2024 · 7 mois",
-      location: "Oujda, Oriental, Maroc · Sur site",
-      description: "Étude technique approfondie et dimensionnement des installations. Analyse des plans thermiques, calcul des charges thermiques, choix des équipements adaptés et schématisation des réseaux.",
+      period: "oct. 2023 - juin 2024",
+      location: "Maroc",
+      description: "Dimensionnement de systèmes solaires On-Grid, Off-Grid et pompage. Sélection des équipements et supervision des installations. Élaboration de devis et analyse des besoins énergétiques.",
       icon: Wrench,
-      skills: ["Dimensionnement", "Étude technique", "Réseaux hydrauliques/aérauliques", "AutoCAD"]
+      skills: ["Solaire On-Grid/Off-Grid", "Pompage solaire", "Dimensionnement", "Supervision"]
     },
     {
       role: "Assistant Auditeur Énergétique",
-      company: "LafargeHolcim Maroc",
+      company: "LAFARGE HOLCIM",
       type: "Stage",
-      period: "avr. 2023 - juin 2023 · 3 mois",
-      location: "Oujda, Oriental, Maroc · Sur site",
-      description: "Projet de fin d'études / Stage axé sur l'optimisation de la consommation d'énergie de l'usine. Analyse des factures énergétiques, réalisation de bilans thermiques et électriques, et proposition d'actions d'efficacité énergétique.",
+      period: "avr. 2023 - juil. 2023",
+      location: "Maroc",
+      description: "Analyse énergétique du fonctionnement de l'atelier broyeur cru et des parcs de compresseurs. Collecte et traitement des données pour établir le bilan énergétique. Diagnostic des surconsommations avec les outils Ishikawa, AMDEC et Pareto. Proposition de solutions pour améliorer le rendement et la performance énergétique.",
       icon: Zap,
-      skills: ["Audit énergétique", "Efficacité énergétique", "Bilans thermiques", "Optimisation de consommation"]
+      skills: ["Audit énergétique", "Ishikawa/AMDEC/Pareto", "Bilan énergétique", "Performance"]
     },
     {
-      role: "Technicien de maintenance",
-      company: "LafargeHolcim Maroc",
+      role: "Technicien de maintenance electrique",
+      company: "LAFARGE HOLCIM",
       type: "Stage",
-      period: "juil. 2022 - août 2022 · 2 mois",
-      location: "Oujda, Oriental, Maroc · Sur site",
-      description: "Maintenance préventive des armoires électriques et des équipements industriels. Remplacement des composants obsolètes, contrôle des connexions et des protections de puissance.",
+      period: "juil. 2022 - août 2022",
+      location: "Maroc",
+      description: "Maintenance et contrôle des armoires électriques, moteurs et transformateurs. Détection d'anomalies et identification des pertes d'énergie. Mesure et suivi de la consommation énergétique à l'aide d'appareils de diagnostic.",
       icon: Wind,
-      skills: ["Maintenance électrique", "Armoires de commande", "Sécurité industrielle", "Automatisme"]
+      skills: ["Maintenance électrique", "Armoires de commande", "Diagnostic", "Consommation énergétique"]
     }
   ];
 
   const education = [
     {
+      degree: "2ème année Cycle l'ingénieur en Eco-énergetique",
+      specialization: "Eco-énergetique",
+      institution: "ENSIATE Suresnes",
+      period: "2025 - Présent",
+      location: "Suresnes, France",
+      description: "Cycle ingénieur axé sur la maîtrise de l'énergie, les énergies renouvelables et le génie climatique."
+    },
+    {
       degree: "Licence Professionnelle Génie Climatique",
       specialization: "Énergies Renouvelables et Efficacité Énergétique",
-      institution: "Université de Picardie Jules Verne (UPJV)",
-      period: "sept. 2024 - août 2025",
-      location: "Amiens, Hauts-de-France, France",
+      institution: "Université Picardie Jules Verne",
+      period: "2024 - 2025",
+      location: "Amiens, France",
       description: "Formation approfondie sur la conception CVC, l'audit et le diagnostic des bâtiments, le dimensionnement des installations de chauffage, climatisation et énergies vertes."
     },
     {
-      degree: "Technicien Spécialisé en Efficacité Énergétique",
-      specialization: "Énergies Renouvelables et Énergies Propres",
-      institution: "IFMEREE (Institut de Formation aux Métiers des Energies Renouvelables)",
-      period: "sept. 2021 - sept. 2023",
-      location: "Oujda, Oriental, Maroc",
+      degree: "Diplôme de Technicien Spécialisé",
+      specialization: "Énergies Renouvelables & de l'Efficacité Énergétique",
+      institution: "Institut de Formation aux Métiers des Énergies Renouvelables",
+      period: "2021 - 2023",
+      location: "Oujda, Maroc",
       description: "Apprentissage technique sur les systèmes solaires thermiques, photovoltaïques, l'éolien, l'efficacité énergétique industrielle et les systèmes électriques."
+    },
+    {
+      degree: "Baccalauréat Scientifique",
+      specialization: "Option Physique Chimie",
+      institution: "Lycée El Arbi El Houssini",
+      period: "2020 - 2021",
+      location: "Maroc",
+      description: ""
     }
   ];
 
   const skills = [
-    { name: "CVC & Génie Climatique", level: 90, category: "technical" },
-    { name: "Dimensionnement Thermique", level: 85, category: "technical" },
-    { name: "Audit & Efficacité Énergétique", level: 80, category: "technical" },
-    { name: "Énergies Renouvelables (Solaire/Éolien)", level: 85, category: "technical" },
-    { name: "Maintenance Électrique & Armoires", level: 75, category: "technical" },
-    { name: "AutoCAD & Dessin Technique", level: 80, category: "tools" },
-    { name: "PVSyst & Dialux", level: 70, category: "tools" },
-    { name: "Régulation & Automatisme", level: 75, category: "technical" },
+    { name: "Pack Office", level: 90, category: "tools" },
+    { name: "AUTO-CAD / Revit", level: 85, category: "tools" },
+    { name: "Caneco BT", level: 80, category: "tools" },
+    { name: "Pleiades, BatiAudit", level: 85, category: "tools" },
+    { name: "PV Syst", level: 80, category: "tools" },
+    { name: "Design Builder, Sketchup", level: 75, category: "tools" },
+    { name: "DIAlux, Matlab", level: 70, category: "tools" },
+    { name: "Analyse et organisation des données", level: 90, category: "technical" },
+    { name: "Diagnostic énergétique de bâtiments", level: 85, category: "technical" },
+    { name: "Suivi performance & Notes de calcul", level: 80, category: "technical" },
+    { name: "Rédaction cahiers des charges", level: 80, category: "technical" },
     { name: "Français", level: 95, category: "languages" },
-    { name: "Anglais Technique", level: 75, category: "languages" },
-    { name: "Arabe (Langue Maternelle)", level: 100, category: "languages" }
+    { name: "Anglais", level: 80, category: "languages" },
+    { name: "Arabe", level: 100, category: "languages" }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -277,24 +307,33 @@ export default function Home() {
         id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 pt-16"
       >
-        {/* ── GridScan full-screen background ── */}
+        {/* ── GhostFibers full-screen background ── */}
         <div className="absolute inset-0">
-          <GridScan
-            sensitivity={0.55}
-            lineThickness={1}
-            linesColor="#2F293A"
-            gridScale={0.1}
-            scanColor="#FF9FFC"
-            scanOpacity={0.4}
-            enablePost
-            bloomIntensity={0.6}
-            chromaticAberration={0.002}
-            noiseIntensity={0.01}
-            lineJitter={0.1}
-            scanGlow={0.5}
-            scanSoftness={2}
-            enableWebcam={false}
-            showPreview={false}
+          <GhostFibers
+            lineColor="#2F293A"
+            glowColor="#FF9FFC"
+            speed={0.2}
+            scale={2}
+            rotation={0}
+            rotationSpeed={0.25}
+            layers={4}
+            waveAmplitude={0.015}
+            waveFrequency={3}
+            waveSpeed={0.15}
+            layerSpeed={0.08}
+            twist={0.1}
+            twistFrequency={5}
+            twistSpeed={1.2}
+            lineFrequency={5}
+            lineSpacing={2}
+            lineSharpness={16}
+            glowFalloff={10}
+            glowIntensity={1.6}
+            brightness={2}
+            blueBoost={1.25}
+            vignette={0.8}
+            grain={0.05}
+            lightMode={false}
           />
         </div>
 
@@ -313,7 +352,7 @@ export default function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FF9FFC]/30 bg-[#FF9FFC]/5 text-[#FF9FFC] text-xs font-semibold uppercase tracking-widest mb-10">
             <span className="h-1.5 w-1.5 rounded-full bg-[#FF9FFC] animate-pulse" />
-            Recherche d&apos;Alternance 2025
+            Recherche d&apos;un Contrat CDI
           </div>
 
           {/* Name — StrokeText: draw stroke then fill wipe */}
@@ -770,7 +809,7 @@ export default function Home() {
             <CardContent className="pt-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8">
                 <a
-                  href="https://wa.me/212600000000"
+                  href="https://wa.me/33620219625"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center justify-center gap-3 p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all group"
@@ -874,11 +913,11 @@ export default function Home() {
             {/* Social links */}
             <div className="flex flex-wrap justify-center gap-3 mt-1">
               <a
-                href="tel:+212650475939"
+                href="tel:+33620219625"
                 className="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800/80 bg-slate-900/50 text-slate-500 text-xs hover:border-fuchsia-500/50 hover:text-[#FF9FFC] hover:bg-fuchsia-500/10 transition-all duration-300"
               >
                 <Phone size={12} className="group-hover:scale-110 transition-transform" />
-                +212 650 475 939
+                +212 6 50 47 59 39
               </a>
               <a
                 href="https://www.instagram.com/amine.jhilel.7/"

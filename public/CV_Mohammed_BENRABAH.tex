@@ -1,45 +1,140 @@
-\documentclass[10pt,a4paper,sans]{moderncv}
-
-% ModernCV themes
-\moderncvstyle{classic} 
-\moderncvcolor{green} 
+\documentclass[9pt, a4paper]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.88]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=1.2cm, top=1.0cm, bottom=1.0cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{tabularx}
 
-% Personal Information
-\name{Mohammed}{BENRABAH}
-\title{Apprenti Ingénieur Éco-Énergétique \& CVC}
-\address{Amiens, France}{}
-\phone[mobile]{+33 0 00 00 00 00}
-\email{contact@mohammed.benrabah.fr} % Please replace with your actual email
-\social[linkedin]{mohammed-benrabah}
+\definecolor{accentblue}{RGB}{41, 98, 178}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{lightgray}{RGB}{130, 130, 130}
+
+\hypersetup{colorlinks=true, urlcolor=accentblue, linkcolor=accentblue}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{3pt}
+  {\normalsize \textbf{\textcolor{accentblue}{#1}}}
+  \vspace{1pt}
+  \hrule height 0.4pt
+  \vspace{3pt}
+}
+
+\newcommand{\cventry}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} \textit{\textcolor{darkgray}{ --- #2}} & \textcolor{lightgray}{\small #3}
+  \end{tabularx}\vspace{-1pt}
+}
 
 \begin{document}
-\makecvtitle
 
-\section{Objectif Professionnel}
-En tant qu'apprenti ingénieur éco-énergétique, je combine une rigueur théorique avec de solides bases en diagnostic et étude. Ayant réalisé plusieurs stages opérationnels dans l'installation et la maintenance CVC, ainsi que dans l'audit industriel, j'apporte une double compétence pratique et analytique essentielle pour appréhender les systèmes énergétiques complexes. Je recherche activement une alternance me permettant de concevoir et d'intégrer des technologies de pointe pour l'efficacité énergétique, en participant à la réduction concrète de l'empreinte carbone.
+% ── HEADER ──
+\begin{center}
+  {\LARGE \textbf{Mohammed BENRABAH}} \\[2pt]
+  {\normalsize \textit{\textcolor{accentblue}{Apprenti Ingénieur Éco-Énergétique \& Génie Climatique}}} \\[3pt]
+  {\small
+    \href{mailto:m.benrabah21@gmail.com}{m.benrabah21@gmail.com}
+    ~|~ +33 6 20 21 96 25
+    ~|~ Bois-Colombes, France
+    ~|~ Permis B
+    ~|~ \href{https://linkedin.com/in/mohammed-benrabah}{linkedin.com/in/mohammed-benrabah}
+  }
+\end{center}
+\vspace{20pt}
 
-\section{Expériences Professionnelles}
-\cventry{Juin 2025 -- Août 2025}{Technicien de maintenance CVC}{CITY CLIM}{Paris}{}{Installation et maintenance préventive et curative des systèmes de chauffage, ventilation et climatisation (CVC). Diagnostic des pannes, réglage des régulations thermiques et optimisation des flux d'air.}
-\cventry{Oct. 2023 -- Avr. 2024}{Technicien de maintenance}{Merca Bestagri}{Oujda, Maroc}{}{Étude technique approfondie et dimensionnement des installations. Analyse des plans thermiques, calcul des charges thermiques, choix des équipements adaptés et schématisation des réseaux.}
-\cventry{Avr. 2023 -- Juin 2023}{Assistant Auditeur Énergétique}{LafargeHolcim Maroc}{Oujda, Maroc}{}{Projet de fin d'études / Stage axé sur l'optimisation de la consommation d'énergie de l'usine. Analyse des factures énergétiques, réalisation de bilans thermiques et électriques, et proposition d'actions d'efficacité énergétique.}
-\cventry{Juil. 2022 -- Août 2022}{Technicien de maintenance}{LafargeHolcim Maroc}{Oujda, Maroc}{}{Maintenance préventive des armoires électriques et des équipements industriels. Remplacement des composants obsolètes, contrôle des connexions et des protections de puissance.}
+% ── PROFIL ──
+\cvsection{Profil}
+Apprenti ingénieur en éco-énergétique, à la recherche d'une alternance de 12 mois en génie climatique et efficacité énergétique. Approche alliant rigueur technique et capacité d'analyse pour diagnostiquer et optimiser les performances énergétiques des bâtiments et installations industrielles.
 
-\section{Cursus Académique}
-\cventry{Sept. 2024 -- Août 2025}{Licence Professionnelle Génie Climatique}{Université de Picardie Jules Verne (UPJV)}{Amiens, France}{}{Énergies Renouvelables et Efficacité Énergétique. Formation approfondie sur la conception CVC, l'audit et le diagnostic des bâtiments, le dimensionnement des installations de chauffage, climatisation et énergies vertes.}
-\cventry{Sept. 2021 -- Sept. 2023}{Technicien Spécialisé en Efficacité Énergétique}{IFMEREE}{Oujda, Maroc}{}{Énergies Renouvelables et Énergies Propres. Apprentissage technique sur les systèmes solaires thermiques, photovoltaïques, l'éolien, l'efficacité énergétique industrielle et les systèmes électriques.}
+\vspace{5pt}
+% ── FORMATIONS ──
+\cvsection{Formations}
+\cventry{ENSIATE Suresnes}{2ème année Cycle Ingénieur Éco-Énergétique}{2025 -- Présent}
+\cventry{Université Picardie Jules Verne}{Licence Pro. Génie Climatique, Énergies Renouvelables \& Efficacité Énergétique}{2024 -- 2025}
+\cventry{IFMEREE, Oujda}{Diplôme de Technicien Spécialisé en Énergies Renouvelables \& Efficacité Énergétique}{2021 -- 2023}
+\cventry{Lycée El Arbi El Houssini}{Baccalauréat Scientifique — Option Physique Chimie}{2020 -- 2021}
 
-\section{Compétences Techniques}
-\cvitem{Génie Climatique}{CVC, Dimensionnement Thermique, Réseaux hydrauliques/aérauliques}
-\cvitem{Énergie}{Audit \& Efficacité Énergétique, Énergies Renouvelables (Solaire/Éolien)}
-\cvitem{Technique}{Maintenance Électrique \& Armoires, Régulation \& Automatisme}
-\cvitem{Logiciels}{AutoCAD, PVSyst, Dialux}
+\vspace{5pt}
+% ── EXPÉRIENCES ──
+\cvsection{Expériences Professionnelles}
 
-\section{Langues}
-\cvitemwithcomment{Arabe}{Langue maternelle}{}
-\cvitemwithcomment{Français}{Courant}{}
-\cvitemwithcomment{Anglais}{Technique}{}
+\cventry{Audit Expert Habitat / ENSIATE Suresnes}{Chargé d'Audit Énergétique}{Mai 2026 -- Présent}
+\begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt, label={---}]
+  \item Analyse énergétique de bâtiments résidentiels/tertiaires ; collecte de données : enveloppe, parois, CVC/ECS.
+  \item Modélisation thermique, diagnostic des déperditions, proposition de scénarios de rénovation énergétique.
+\end{itemize}
+
+\vspace{2pt}
+\cventry{CITY CLIM}{Technicien de Maintenance CVC (Stage)}{Juin 2025 -- Août 2025}
+\begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt, label={---}]
+  \item Installation, diagnostic et dépannage de systèmes CVC ; réparation des composants défectueux.
+  \item Lecture de plans techniques, schémas électriques et hydrauliques ; vérification des équipements de régulation.
+\end{itemize}
+
+\vspace{2pt}
+\cventry{MERCA BEST AGRI SARL}{Technicien de Maintenance (Stage)}{Oct. 2023 -- Juin 2024}
+\begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt, label={---}]
+  \item Dimensionnement de systèmes solaires On-Grid, Off-Grid et pompage ; supervision des installations.
+\end{itemize}
+
+\vspace{2pt}
+\cventry{LAFARGE HOLCIM}{Assistant Auditeur Énergétique (Stage)}{Avr. 2023 -- Juil. 2023}
+\begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt, label={---}]
+  \item Analyse énergétique de l'atelier broyeur cru et des parcs de compresseurs ; bilan énergétique.
+  \item Diagnostic des surconsommations (Ishikawa, AMDEC, Pareto) ; proposition de solutions d'amélioration.
+\end{itemize}
+
+\vspace{2pt}
+\cventry{LAFARGE HOLCIM}{Technicien de Maintenance Électrique (Stage)}{Juil. 2022 -- Août 2022}
+\begin{itemize}[leftmargin=1em, itemsep=0pt, topsep=1pt, parsep=0pt, label={---}]
+  \item Maintenance des armoires électriques, moteurs et transformateurs ; suivi de la consommation énergétique.
+\end{itemize}
+
+\vspace{5pt}
+% ── PROJETS ACADÉMIQUES ──
+\cvsection{Projets Académiques}
+\begin{itemize}[leftmargin=1em, itemsep=3pt, topsep=0pt, parsep=0pt, label={---}]
+  \item \textbf{Inconfort Thermique IFMEREE} --- Résoudre un problème de l'inconfort thermique de l'institut (IFMEREE), identification des causes et proposition de solutions correctives.
+  \item \textbf{Études Thermiques} --- Étude thermique d'une maison avec identification des déperditions et solutions d'isolation optimisées. Étude thermique d'un bâtiment (R+3 à Oujda) : calcul des charges thermiques et dimensionnement des équipements.
+  \item \textbf{Pyrogazéification} --- Assistant Ingénieur d'Études : dimensionnement d'une unité de pyrogazéification, rédaction du CCTP et chiffrage complet du projet.
+\end{itemize}
+
+\vspace{5pt}
+% ── COMPÉTENCES ──
+\cvsection{Compétences Techniques}
+\begin{itemize}[leftmargin=1em, itemsep=2pt, topsep=0pt, parsep=0pt, label={---}]
+  \item Analyse et organisation des données de consommation, afin d'identifier des actions concrètes d'amélioration de la performance énergétique des bâtiments.
+  \item Appui technique transverse aux différents services sur les problématiques liées à l'énergie du bâtiment, aux études thermiques et aux projets en cours.
+  \item Suivi de la performance énergétique des bâtiments concernés par des travaux, avec évaluation des actions contribuant à la maîtrise de l'énergie.
+  \item Réalisation d'audits énergétiques, de notes de calcul, de rapports techniques et de présentations en lien avec les activités menées.
+  \item Contribution à la rédaction de cahiers des charges, référentiels et documents techniques, tout en participant aux démarches de sobriété environnementale.
+  \item \textbf{Logiciels :} Pack Office, AutoCAD, Revit, Caneco BT, Pleiades, BatiAudit, PV Syst, SketchUp, DIAlux, Matlab
+\end{itemize}
+
+\vspace{5pt}
+% ── LANGUES ──
+\cvsection{Langues}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=0pt, parsep=0pt, label={---}]
+  \item \textbf{Arabe :} Langue maternelle
+  \item \textbf{Français :} Courant
+  \item \textbf{Anglais :} Niveau professionnel
+\end{itemize}
+
+\vspace{5pt}
+% ── ATOUTS & INTÉRÊTS ──
+\cvsection{Atouts \& Centres d'Intérêt}
+\begin{tabularx}{\linewidth}{@{} X r @{}}
+  \textbf{Atouts :} Esprit d'analyse, rigueur et précision, curiosité technique, travail en équipe, autonomie &
+  \textbf{Loisirs :} Échecs, Football, Natation \\
+\end{tabularx}
 
 \end{document}
