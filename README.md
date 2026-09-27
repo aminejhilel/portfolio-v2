@@ -19,3 +19,5 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+<img width="1917" height="903" alt="image" src="https://github.com/user-attachments/assets/c20a5963-2a30-4253-b46d-093d68555e12" />
